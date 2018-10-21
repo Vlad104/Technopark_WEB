@@ -1,0 +1,28 @@
+{% extends "question/base.html" %}
+
+{% load static %}
+{% block content %}
+    <!-- Begin page content -->
+    <main role="main" class="container">
+        <div class="row">
+            <div class="col-8">
+                {% for question in questions %}
+                <div class="row question_item">
+                    <div class="col-2">
+                        <img src="{% static "img/ld.png" %}" alt="">
+                    </div>
+                    <div class="col-10">
+                        <a href="{% url 'question' question.id %}"><h2>{{ question.name }}</h2></a>
+                        <p>What is my question</p>
+                        <div class="row">
+                            <div class="col">answers(3)</div>
+                            <div class="col">tags: 123, 123</div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="col-4">Tags</div>
+        </div>
+    </main>
+{% endblock %}
