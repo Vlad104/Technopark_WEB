@@ -1,0 +1,22 @@
+{% extends "question/base.html" %}
+
+{% load static %}
+{% block content %}
+    <!-- Begin page content -->
+    <main role="main" class="container">
+        <div class="row">
+            <div class="col-8">
+                <div class="row">
+                    <div class="col-2">
+                        <img src="{% static "img/ld.png" %}" alt="">
+                    </div>
+                    <div class="col-10">
+                        <h2>My best quest</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime voluptas, architecto suscipit aliquam maiores debitis facilis fugiat illum neque? Quidem maxime quod sed voluptate praesentium voluptas saepe fugit, assumenda, doloremque.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">Tags</div>
+        </div>
+    </main>
+{% endblock %}
