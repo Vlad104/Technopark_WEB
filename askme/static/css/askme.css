@@ -46,3 +46,87 @@ code {
     height: 50px;
     width: 50px;
 }
+
+.my_btn1 {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    vertical-align: middle;
+    text-align: center;
+    text-decoration: none;
+    color: #00ff00;
+    outline: none;
+    border-radius: 20px;
+    box-shadow: 0 0 0 1px #ddd inset, 0 1px 1px #fff;
+}
+.my_btn1:hover {
+    background: #dcdcdc linear-gradient(#fff, #00ff00);
+    box-shadow: 0 0 0 1px #aaa inset, 0 1px 1px #aaa;
+}
+.my_btn1:active {
+    background: none;
+    box-shadow: 0 0 0 1px #bbb inset, 0 1px 3px rgba(7,163,48,.5) inset, 0 1px 2px #fff;
+}
+
+.ava {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+}
+
+.img{
+    margin: 10px;
+    padding: 0;
+    position: relative;
+    width:64px;
+    height:64px;
+    background: #c2c2c2;
+    border: 1px solid #000;
+    border-radius:3px;
+}
+
+.img img{
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    max-width:100%;
+    max-height: 100%;
+}
+
+.under_img {
+    align-self: : center;
+    align-content: center;
+}
+
+.answer_item {
+    border: solid 1px #adadad;
+    padding: 15px;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+.my_btn2 {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    vertical-align: middle;
+    text-align: center;
+    text-decoration: none;
+    color: #00ff00;
+    outline: none;
+    border-radius: 20px;
+    box-shadow: 0 0 0 1px #ddd inset, 0 1px 1px #fff;
+}
+.my_btn2:hover {
+    background: #dcdcdc linear-gradient(#fff, #ff0000);
+    box-shadow: 0 0 0 1px #aaa inset, 0 1px 1px #aaa;
+}
+.my_btn2:active {
+    background: none;
+    box-shadow: 0 0 0 1px #bbb inset, 0 1px 3px rgba(7,163,48,.5) inset, 0 1px 2px #fff;
+}

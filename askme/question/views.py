@@ -10,14 +10,45 @@ def index(request):
 		{"name" : "перестать", "id": 2},
 		{"name" : "делать", "id": 3}, 
 		{"name" : "сайты???", "id": 4},
-		{"name" : "my fifth question", "id": 5}, 
-		{"name" : "my sixth question", "id": 6},
-		{"name" : "my seventh question", "id": 7}, 
-		{"name" : "my eigth question", "id": 8},
+		{"name" : "ааааааааааа", "id": 5}, 
+		{"name" : "ааааааааааа", "id": 6},
+	]
+	tags_list = [	
+		{"name" : "Антоха", "id": 1}, 
+		{"name" : "пауки", "id": 2},
+		{"name" : "html", "id": 3}, 
+		{"name" : "картоха", "id": 4},
 	]
 	return render(request, "question/index.html", {
 		"questions": questions_list,
+		"tags": tags_list,
 	})
 
-def question(request, id):
-	return render(request, "question/question.html", {})
+def question(request, id):	
+	answer_list = [
+		{"name" : "Пиши по русски!!!!", "id": 1}, 
+		{"name" : "Загугли", "id": 2},
+		{"name" : "не гугли, подумой", "id": 3}, 
+	]
+
+	tags_list = [	
+		{"name" : "Антоха", "id": 1}, 
+		{"name" : "пауки", "id": 2},
+		{"name" : "html", "id": 3}, 
+		{"name" : "картоха", "id": 4},
+	]
+	return render(request, "question/question.html", {
+			"answers": answer_list,
+			"tags": tags_list,
+		})
+
+def add_question(request):
+	tags_list = [	
+		{"name" : "Антоха", "id": 1}, 
+		{"name" : "пауки", "id": 2},
+		{"name" : "html", "id": 3}, 
+		{"name" : "картоха", "id": 4},
+	]
+	return render(request, "question/add_question.html", {
+			"tags": tags_list,
+		})

@@ -1,4 +1,4 @@
-{% extends "add_question/base.html" %}
+{% extends "question/base.html" %}
 
 {% load static %}
 {% block content %}
@@ -7,16 +7,34 @@
         <div class="row">
             <div class="col-8">
                 <div class="row">
-                    <div class="col-2">
-                        <img src="{% static "img/ld2.png" %}" alt="">
-                    </div>
-                    <div class="col-10">
-                        <h2>My best quest</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime voluptas, architecto suscipit aliquam maiores debitis facilis fugiat illum neque? Quidem maxime quod sed voluptate praesentium voluptas saepe fugit, assumenda, doloremque.</p>
-                    </div>
+                    <h3>Задайте новый вопрос</h3> 
+                </div>                   
+                <div class="row">
+                    <form>
+                      <div class="form-group">
+                        <label for="exampleFormControlInput1">Введите тему вопроса
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Тема"></label>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleFormControlTextarea1">
+                            Введите подробное описание вопроса
+                        </label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleFormControlInput1">Добавьте тэги</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Тэг"></label>
+                      </div>
+                      <button type="submit" class="btn btn-primary">Задать</button>
+                    </form>
                 </div>
             </div>
-            <div class="col-4">Tags</div>
+            <div class="col-4">
+                <h4>Top Tags</h4>
+                {% for tag in tags %}
+                    <a href="">{{tag.name}}</a>
+                {% endfor %}
+            </div>
         </div>
     </main>
 {% endblock %}

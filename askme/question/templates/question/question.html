@@ -9,21 +9,54 @@
                 <div class="row">
                     <div class="col-2">
                         <div class="row">
-                            <img src="{% static "img/ld2.png" %}" style="width:80px;height:80px" alt="">
+                            <div class="img">
+                                <img src="{% static "img/ld.png" %}" alt="">
+                            </div>
                         </div>
                         <div class="row" align="center">
-                            <a>Антоха</a>
+                            Антоха
                         </div>
                     </div>
                     <div class="col-10">
                         <div class="row">
-                            <h2>My best quest</h2>
+                            <h2>Очень важный вопрос от антохи</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime voluptas, architecto suscipit aliquam maiores debitis facilis fugiat illum neque? Quidem maxime quod sed voluptate praesentium voluptas saepe fugit, assumenda, doloremque.</p>
                         </div>
                     </div>
                 </div>
+                    {% for answer in answers %}
+                        <div class="answer_item">
+                            <div class="row">
+                                <div class="col-2">
+                                    <div class="row">
+                                        <div class="img">
+                                            <img src="{% static "img/ld2.png" %}" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="row" align="center">
+                                        Гошан
+                                    </div>
+                                    <div class="row">
+                                        <span>                                
+                                            <button type="button" class="my_btn2"></button>
+                                            <a>7</a>
+                                            <button type="button" class="my_btn1"></button>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-10">
+                                    {{answer.name}}
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
             </div>
-            <div class="col-4">Tags</div>
+            <div class="col-4">
+                <h4>Top Tags</h4>
+                {% for tag in tags %}
+                    <a href="">{{tag.name}}</a>
+                {% endfor %}
+            </div>
         </div>
     </main>
 {% endblock %}
