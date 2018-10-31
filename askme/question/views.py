@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import render
-from question.models import Question
+#from question.models import Question
 
 # Create your views here. ## MY code
 def index(request):
@@ -25,14 +25,14 @@ def index(request):
 		"tags": tags_list,
 	})
 
-def question(request, question_id):
-    return render(request, 'question/question.html', {
-	    	'question': get_object_or_404(Question, pk=question_id)
-    	})
+#def question_new(request, question_id):
+#    return render(request, 'question/question.html', {
+#	    	'question': get_object_or_404(Question, pk=question_id)
+#    	})
 
-def question_old(request, id):	
+def question(request, id):	
 	answer_list = [
-		{"name" : "Пиши по русски!!!!", "id": 1}, 
+		{"name" : "Пиши па русски!!!!", "id": 1}, 
 		{"name" : "Загугли", "id": 2},
 		{"name" : "не гугли, подумой", "id": 3}, 
 	]
