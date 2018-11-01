@@ -17,13 +17,15 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
-
 from question import views
+from question.views import QuestionList, TagList
 
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    #path('', views.index, name='index'),
+    path('', QuestionList.as_view(), name='index'),
+    path('', TagList.as_view(), name='base'),
     path('question/<int:id>/', views.question, name='question'),
+    path('ask/', views.ask, name='ask'),
     path('admin/', admin.site.urls),
-    path('add_question/', views.add_question, name='add_question'),
 ]

@@ -3,58 +3,46 @@
 {% load static %}
 {% block content %}
     <!-- Begin page content -->
-    <main role="main" class="container">
-        <div class="row">
-            <div class="col-8">
-                {% for question in questions %}
-                <div class="row question_item">
-                    <div class="col-2">
-                        <div class="row" align="center">
-                            <div class="img">
-                                <img src="{% static "img/ld.png" %}" alt="" class="ava1">
-                            </div>
-                        </div>
-                        <div class="under_img">
-                            <div class="row">
-                                Антоха
-                            </div>
-                            <div class="row">
-                                <span>                                
-                                    <button type="button" class="my_btn2"></button>
-                                    <a>7</a>
-                                    <button type="button" class="my_btn1"></button>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-10">
-                        <a href="{% url 'question' question.id %}"><h3>{{ question.name }}</h3></a>
-                        <p>Очень важный вопрос от Антохи</p>
-                        <div class="row">
-                            <div class="col">
-                                <a href="">Ответы(2)</a>
-                            </div>
-                            <div class="col">
-                                Тэги: 
-                                <a href="">Антоха</a>, 
-                                <a href="">любит</a>,
-                                <a href="">задавать</a>, 
-                                <a href="">вопросы</a>
-                                <a href="">Ему</a>
-                                <a href="">не</a>
-                                <a href="">отвечать</a>
-                                </div>
-                        </div>
-                    </div>
+    {% for q in questions %}
+    <div class="row question_item">
+        <div class="col-2">
+            <div class="row" align="center">
+                <div class="img">
+                    <img src="{% static "img/ld.png" %}" alt="" class="ava1">
                 </div>
-                {% endfor %}
             </div>
-            <div class="col-4">
-                <h4>Top Tags</h4>
-                {% for tag in tags %}
-                    <a href="">{{tag.name}}</a>
-                {% endfor %}
+            <div class="under_img">
+                <div class="row">
+                    {{ q.author }}
+                </div>
+                <div class="row">
+                    <span>                                
+                        <button type="button" class="my_btn2"></button>
+                        <a>7</a>
+                        <button type="button" class="my_btn1"></button>
+                    </span>
+                </div>
             </div>
         </div>
-    </main>
+        <div class="col-10">
+            <a href="{% url 'question' id=q.id %}">
+                <h3>{{ q.title }}</h3>
+            </a>
+            <p>{{ q.text }}</p>
+            <div class="row">
+                <div class="col">
+                    <a href="">Ответы(2)</a>
+                </div>
+                <div class="col">
+                    Тэги: 
+                    {% for qt in q.tags.all %}
+                        <a href="">{{ qt }}</a>
+                    {% endfor %}
+                    </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
 {% endblock %}
+
+    
