@@ -24,8 +24,11 @@ from question.views import QuestionList, TagList
 urlpatterns = [
     #path('', views.index, name='index'),
     path('', QuestionList.as_view(), name='index'),
-    path('', TagList.as_view(), name='base'),
+    path('', TagList.as_view(), name='index'),
     path('question/<int:id>/', views.question, name='question'),
     path('ask/', views.ask, name='ask'),
+    path('login/', views.login, name='login'),
+    path('registration/', views.registration, name='registration'),    
+    path('settings/', views.settings, name='settings'),
     path('admin/', admin.site.urls),
 ]
