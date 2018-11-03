@@ -21,7 +21,6 @@ class Tag(models.Model):
 
 class Question(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-
     title = models.CharField(max_length=120, verbose_name=u"Заголовок вопроса")
     text = models.TextField(verbose_name=u"Полное описание вопроса")
     create_date = models.DateTimeField(default=datetime.now, verbose_name=u"Время создания вопроса")
@@ -33,3 +32,17 @@ class Question(models.Model):
 
     class Meta:
         ordering = ['-create_date']
+
+class Answer(models.Model):
+    author = models.ForeignKey(User, on_delete=models.CASCADE)   
+    text = models.TextField(verbose_name=u"Полное описание вопроса")
+    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+
+class Like(models.Model):
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+
+class Profile(models.Model):
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    nickname = models.CharField(max_length=120, verbose_name=u"Заголовок вопроса")
+    #avatar = 
