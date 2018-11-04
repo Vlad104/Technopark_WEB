@@ -1,7 +1,25 @@
-{% extends "question/navbar.html" %}
-
 {% load static %}
-{% block makeup %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    {% block title %}
+    <title>AskHub</title>
+    {% endblock %}
+    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+    <link href="{% static "css/askme.css" %}" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+    {% block navbar %}
+        {% include "question/navbar.html" %}
+    {% endblock %}
+    </header>
+
     <!-- Begin page content -->
     <main role="main" class="container">
         <div class="row">
@@ -9,14 +27,22 @@
                 {% block content %}{% endblock %}
             </div>
             <div class="col-4">    
+                <!--
                 <h4>Top Tags</h4>
                 {% for t in tags %}
                     <a href="">{{ t.title }}</a>
                 {% endfor %}
-                <!--
-                {% block sidebar %}{% endblock %}
                 -->
+                {% block sidebar %}
+                    {% include "question/sidebar.html" %}
+                {% endblock %}
+
             </div>
         </div>
     </main>
-{% endblock %}
+
+    <script src="{% static "js/jquery.min.js" %}"></script>
+    <script src="{% static "js/popper.min.js" %}"></script>
+    <script src="{% static "js/bootstrap.min.js" %}"></script>
+</body>
+</html>

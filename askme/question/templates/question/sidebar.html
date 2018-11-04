@@ -1,10 +1,8 @@
-{% extends "question/base.html" %}
-
 {% load static %}
 {% block sidebar %}
     <!-- Begin page content -->
     <h4>Top Tags</h4>
     {% for t in tags %}
-        <a href="">{{ t.title }}</a>
+        <a href="{% url 'tag' tag=t %}">{{ t.title }}</a>
     {% endfor %}
 {% endblock %}

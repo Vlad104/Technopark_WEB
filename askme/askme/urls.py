@@ -18,14 +18,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from question import views
-from question.views import QuestionList, TagList
+#from question.views import QuestionList, AnswerList, TagList
 
 
 urlpatterns = [
-    #path('', views.index, name='index'),
-    path('', QuestionList.as_view(), name='index'),
-    path('', TagList.as_view(), name='index'),
-    #path('', views.index, name='index'),
+    #path('', QuestionList.as_view(), name='index'),
+    #path('', TagList.as_view(), name='index'),
+    #path('question/<int:id>/', AnswerList.as_view(), name='answers'),
+    path('', views.index, name='index'),
+    path('top', views.top, name='top'),
+    path('new', views.new, name='new'),
+    path('<tag>', views.tag, name='tag'),
     path('question/<int:id>/', views.question, name='question'),
     path('ask/', views.ask, name='ask'),
     path('login/', views.login, name='login'),

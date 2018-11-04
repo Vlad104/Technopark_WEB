@@ -1,0 +1,47 @@
+{% load static %}
+{% block answers %}
+
+{% for answer in answers %}
+    <div class="answer_item">
+        <div class="row">
+            <div class="col-2">
+                <div class="row">
+                    <div class="img">
+                        <img src="{% static "img/ld2.png" %}" alt="">
+                    </div>
+                </div>
+                <div class="row" align="center">
+                    {{answer.author}}
+                </div>
+                <div class="row">
+                    <span>                                
+                        <button type="button" class="my_btn2"></button>
+                        <a>7</a>
+                        <button type="button" class="my_btn1"></button>
+                    </span>
+                </div>
+            </div>
+            <div class="col-10">
+                {{answer.text}}
+            </div>
+        </div>
+    </div>
+{% endfor %}
+
+<div class="pagination">
+    <span class="step-links">
+        {% if answers.has_previous %}
+            <a href="?page={{ answers.previous_page_number }}"><-</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ answers.number }} of {{ answers.paginator.num_pages }}.
+        </span>
+
+        {% if answers.has_next %}
+            <a href="?page={{ answers.next_page_number }}">-></a>
+        {% endif %}
+    </span>
+</div>
+
+{% endblock %}
