@@ -2,16 +2,24 @@
 from __future__ import unicode_literals
 
 from datetime import datetime
+from django.utils import timezone
 
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
-from question.managers import QuestionManager, TagManager, AnswerManager
+from question.managers import UserManager, TagManager, QuestionManager, AnswerManager, LikeManager
 
 # Create your models here.
 
 class User(AbstractUser):
-    upload = models.ImageField(upload_to='uploads/%Y/%m/%d/')
+    upload = models.ImageField(upload_to='uploads/%Y/%m/%d/')    
+    registration_date = models.DateTimeField(default=timezone.now, verbose_name="Дата решистрации")
+    rating = models.IntegerField(default=0, verbose_name="Рейтинг пользователя")
+
+    objects = UserManager()
+
+    def __str__(self):
+        return self.username
 
 class Tag(models.Model):
     title = models.CharField(max_length=120, verbose_name=u"Заголовок ярлыка")
@@ -53,6 +61,8 @@ class Answer(models.Model):
 class Like(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
+
+    objects = LikeManager()
     
     def __str__(self):
         return self.author + " liked"

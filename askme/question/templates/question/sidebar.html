@@ -1,8 +1,16 @@
 {% load static %}
 {% block sidebar %}
     <!-- Begin page content -->
-    <h4>Top Tags</h4>
-    {% for t in tags %}
-        <a href="{% url 'tag' tag=t %}">{{ t.title }}</a>
-    {% endfor %}
+    <div class="sidebar">
+        <h4>Популярные тэги</h4>
+        {% for t in tags %}
+            <a href="{% url 'tag' tag=t %}">{{ t.title }}</a>
+        {% endfor %}
+        <p>
+        <h4>Топ пользователей</h4>
+            {% for user in users %}
+                <p><a href="{% url 'user' id=user.id %}">{{ user }}</a></p>
+            {% endfor %}    
+        </p>
+    </div>
 {% endblock %}

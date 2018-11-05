@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)http://127.0.0.1:8000/admin/question/user/add/ -->
+<html lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Add user | Django site admin</title>
+<link rel="stylesheet" type="text/css" href="./Add user _ Django site admin_files/base.css">
+<link rel="stylesheet" type="text/css" href="./Add user _ Django site admin_files/forms.css">
+
+
+<script type="text/javascript" src="./Add user _ Django site admin_files/saved_resource"></script>
+<script type="text/javascript" src="./Add user _ Django site admin_files/jquery.js.Без названия"></script>
+<script type="text/javascript" src="./Add user _ Django site admin_files/jquery.init.js.Без названия"></script>
+<script type="text/javascript" src="./Add user _ Django site admin_files/core.js.Без названия"></script>
+<script type="text/javascript" src="./Add user _ Django site admin_files/RelatedObjectLookups.js.Без названия"></script>
+<script type="text/javascript" src="./Add user _ Django site admin_files/actions.js.Без названия"></script>
+<script type="text/javascript" src="./Add user _ Django site admin_files/urlify.js.Без названия"></script>
+<script type="text/javascript" src="./Add user _ Django site admin_files/prepopulate.js.Без названия"></script>
+<script type="text/javascript" src="./Add user _ Django site admin_files/xregexp.js.Без названия"></script>
+<script type="text/javascript" src="./Add user _ Django site admin_files/calendar.js.Без названия"></script>
+<script type="text/javascript" src="./Add user _ Django site admin_files/DateTimeShortcuts.js.Без названия"></script>
+
+
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./Add user _ Django site admin_files/responsive.css">
+    
+
+<meta name="robots" content="NONE,NOARCHIVE">
+</head>
+
+
+<body class="app-question model-user change-form vsc-initialized" data-admin-utc-offset="0">
+
+<!-- Container -->
+<div id="container">
+
+    
+    <!-- Header -->
+    <div id="header">
+        <div id="branding">
+        
+<h1 id="site-name"><a href="http://127.0.0.1:8000/admin/">Django administration</a></h1>
+
+        </div>
+        
+        
+        <div id="user-tools">
+            
+                Welcome,
+                <strong>admin</strong>.
+            
+            
+                
+                    <a href="http://127.0.0.1:8000/">View site</a> /
+                
+                
+                    
+                    
+                
+                
+                <a href="http://127.0.0.1:8000/admin/password_change/">Change password</a> /
+                
+                <a href="http://127.0.0.1:8000/admin/logout/">Log out</a>
+            
+        </div>
+        
+        
+        
+    </div>
+    <!-- END Header -->
+    
+<div class="breadcrumbs">
+<a href="http://127.0.0.1:8000/admin/">Home</a>
+› <a href="http://127.0.0.1:8000/admin/question/">Question</a>
+› <a href="http://127.0.0.1:8000/admin/question/user/">Users</a>
+› Add user
+</div>
+
+    
+
+    
+        
+    
+
+    <!-- Content -->
+    <div id="content" class="colM">
+        
+        <h1>Add user</h1>
+        <div id="content-main">
+
+
+
+<form enctype="multipart/form-data" action="http://127.0.0.1:8000/admin/question/user/add/" method="post" id="user_form" novalidate=""><input type="hidden" name="csrfmiddlewaretoken" value="9SZnj7R2VzLtrqhs3JIOKN2qEiV0EdwJP2C6Q3pCBfLXyMVm5hRH2Lt4KzyxIuNs">
+<div>
+
+
+
+
+
+
+
+  <fieldset class="module aligned ">
+    
+    
+    
+        <div class="form-row field-password">
+            
+            
+                <div>
+                    
+                    
+                        <label class="required" for="id_password">Password:</label>
+                        
+                            <input type="text" name="password" class="vTextField" maxlength="128" required="" id="id_password">
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-last_login">
+            
+            
+                <div>
+                    
+                    
+                        <label for="id_last_login_0">Last login:</label>
+                        
+                            <p class="datetime">
+  Date: <input type="text" name="last_login_0" class="vDateField" size="10" id="id_last_login_0"><span class="datetimeshortcuts">&nbsp;<a href="http://127.0.0.1:8000/admin/question/user/add/#">Today</a>&nbsp;|&nbsp;<a href="http://127.0.0.1:8000/admin/question/user/add/#" id="calendarlink0"><span class="date-icon" title="Choose a Date"></span></a></span>
+
+<br>
+  Time: <input type="text" name="last_login_1" class="vTimeField" size="8" id="id_last_login_1"><span class="datetimeshortcuts">&nbsp;<a href="http://127.0.0.1:8000/admin/question/user/add/#">Now</a>&nbsp;|&nbsp;<a href="http://127.0.0.1:8000/admin/question/user/add/#" id="clocklink0"><span class="clock-icon" title="Choose a Time"></span></a></span>
+
+
+<br><span class="timezonewarning">Note: You are 3 hours ahead of server time.</span></p>
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-is_superuser">
+            
+            
+                <div class="checkbox-row">
+                    
+                    
+                        <input type="checkbox" name="is_superuser" id="id_is_superuser"><label class="vCheckboxLabel" for="id_is_superuser">Superuser status</label>
+                    
+                    
+                        <div class="help">Designates that this user has all permissions without explicitly assigning them.</div>
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-groups">
+            
+            
+                <div>
+                    
+                    
+                        <label for="id_groups">Groups:</label>
+                        
+                            <div class="related-widget-wrapper">
+    <select name="groups" id="id_groups" multiple="">
+</select>
+    
+        <a class="related-widget-wrapper-link add-related" id="add_id_groups" href="http://127.0.0.1:8000/admin/auth/group/add/?_to_field=id&amp;_popup=1" title="Add another group"><img src="./Add user _ Django site admin_files/icon-addlink.svg" alt="Add"></a>
+    
+</div>
+                        
+                    
+                    
+                        <div class="help">The groups this user belongs to. A user will get all permissions granted to each of their groups. Hold down "Control", or "Command" on a Mac, to select more than one.</div>
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-user_permissions">
+            
+            
+                <div>
+                    
+                    
+                        <label for="id_user_permissions">User permissions:</label>
+                        
+                            <div class="related-widget-wrapper">
+    <select name="user_permissions" id="id_user_permissions" multiple="">
+  <option value="1">admin | log entry | Can add log entry</option>
+
+  <option value="2">admin | log entry | Can change log entry</option>
+
+  <option value="3">admin | log entry | Can delete log entry</option>
+
+  <option value="4">admin | log entry | Can view log entry</option>
+
+  <option value="9">auth | group | Can add group</option>
+
+  <option value="10">auth | group | Can change group</option>
+
+  <option value="11">auth | group | Can delete group</option>
+
+  <option value="12">auth | group | Can view group</option>
+
+  <option value="5">auth | permission | Can add permission</option>
+
+  <option value="6">auth | permission | Can change permission</option>
+
+  <option value="7">auth | permission | Can delete permission</option>
+
+  <option value="8">auth | permission | Can view permission</option>
+
+  <option value="13">contenttypes | content type | Can add content type</option>
+
+  <option value="14">contenttypes | content type | Can change content type</option>
+
+  <option value="15">contenttypes | content type | Can delete content type</option>
+
+  <option value="16">contenttypes | content type | Can view content type</option>
+
+  <option value="33">question | answer | Can add answer</option>
+
+  <option value="34">question | answer | Can change answer</option>
+
+  <option value="35">question | answer | Can delete answer</option>
+
+  <option value="36">question | answer | Can view answer</option>
+
+  <option value="37">question | like | Can add like</option>
+
+  <option value="38">question | like | Can change like</option>
+
+  <option value="39">question | like | Can delete like</option>
+
+  <option value="40">question | like | Can view like</option>
+
+  <option value="41">question | profile | Can add profile</option>
+
+  <option value="42">question | profile | Can change profile</option>
+
+  <option value="43">question | profile | Can delete profile</option>
+
+  <option value="44">question | profile | Can view profile</option>
+
+  <option value="25">question | question | Can add question</option>
+
+  <option value="26">question | question | Can change question</option>
+
+  <option value="27">question | question | Can delete question</option>
+
+  <option value="28">question | question | Can view question</option>
+
+  <option value="29">question | tag | Can add tag</option>
+
+  <option value="30">question | tag | Can change tag</option>
+
+  <option value="31">question | tag | Can delete tag</option>
+
+  <option value="32">question | tag | Can view tag</option>
+
+  <option value="21">question | user | Can add user</option>
+
+  <option value="22">question | user | Can change user</option>
+
+  <option value="23">question | user | Can delete user</option>
+
+  <option value="24">question | user | Can view user</option>
+
+  <option value="17">sessions | session | Can add session</option>
+
+  <option value="18">sessions | session | Can change session</option>
+
+  <option value="19">sessions | session | Can delete session</option>
+
+  <option value="20">sessions | session | Can view session</option>
+
+</select>
+    
+        
+    
+</div>
+                        
+                    
+                    
+                        <div class="help">Specific permissions for this user. Hold down "Control", or "Command" on a Mac, to select more than one.</div>
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-username">
+            
+            
+                <div>
+                    
+                    
+                        <label class="required" for="id_username">Username:</label>
+                        
+                            <input type="text" name="username" class="vTextField" maxlength="150" required="" id="id_username">
+                        
+                    
+                    
+                        <div class="help">Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</div>
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-first_name">
+            
+            
+                <div>
+                    
+                    
+                        <label for="id_first_name">First name:</label>
+                        
+                            <input type="text" name="first_name" class="vTextField" maxlength="30" id="id_first_name">
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-last_name">
+            
+            
+                <div>
+                    
+                    
+                        <label for="id_last_name">Last name:</label>
+                        
+                            <input type="text" name="last_name" class="vTextField" maxlength="150" id="id_last_name">
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-email">
+            
+            
+                <div>
+                    
+                    
+                        <label for="id_email">Email address:</label>
+                        
+                            <input type="email" name="email" class="vTextField" maxlength="254" id="id_email">
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-is_staff">
+            
+            
+                <div class="checkbox-row">
+                    
+                    
+                        <input type="checkbox" name="is_staff" id="id_is_staff"><label class="vCheckboxLabel" for="id_is_staff">Staff status</label>
+                    
+                    
+                        <div class="help">Designates whether the user can log into this admin site.</div>
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-is_active">
+            
+            
+                <div class="checkbox-row">
+                    
+                    
+                        <input type="checkbox" name="is_active" id="id_is_active" checked=""><label class="vCheckboxLabel" for="id_is_active">Active</label>
+                    
+                    
+                        <div class="help">Designates whether this user should be treated as active. Unselect this instead of deleting accounts.</div>
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-date_joined">
+            
+            
+                <div>
+                    
+                    
+                        <label class="required" for="id_date_joined_0">Date joined:</label>
+                        
+                            <p class="datetime">
+  Date: <input type="text" name="date_joined_0" value="2018-11-05" class="vDateField" size="10" required="" id="id_date_joined_0"><span class="datetimeshortcuts">&nbsp;<a href="http://127.0.0.1:8000/admin/question/user/add/#">Today</a>&nbsp;|&nbsp;<a href="http://127.0.0.1:8000/admin/question/user/add/#" id="calendarlink1"><span class="date-icon" title="Choose a Date"></span></a></span>
+
+<br>
+  Time: <input type="text" name="date_joined_1" value="23:21:30" class="vTimeField" size="8" required="" id="id_date_joined_1"><span class="datetimeshortcuts">&nbsp;<a href="http://127.0.0.1:8000/admin/question/user/add/#">Now</a>&nbsp;|&nbsp;<a href="http://127.0.0.1:8000/admin/question/user/add/#" id="clocklink1"><span class="clock-icon" title="Choose a Time"></span></a></span>
+
+
+<br><span class="timezonewarning">Note: You are 3 hours ahead of server time.</span></p><input type="hidden" name="initial-date_joined_0" value="2018-11-05" id="initial-id_date_joined_0"><input type="hidden" name="initial-date_joined_1" value="23:21:30" id="initial-id_date_joined_1">
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-upload">
+            
+            
+                <div>
+                    
+                    
+                        <label class="required" for="id_upload">Upload:</label>
+                        
+                            <input type="file" name="upload" accept="image/*" required="" id="id_upload">
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-registration_date">
+            
+            
+                <div>
+                    
+                    
+                        <label class="required" for="id_registration_date_0">Дата решистрации:</label>
+                        
+                            <p class="datetime">
+  Date: <input type="text" name="registration_date_0" value="2018-11-05" class="vDateField" size="10" required="" id="id_registration_date_0"><span class="datetimeshortcuts">&nbsp;<a href="http://127.0.0.1:8000/admin/question/user/add/#">Today</a>&nbsp;|&nbsp;<a href="http://127.0.0.1:8000/admin/question/user/add/#" id="calendarlink2"><span class="date-icon" title="Choose a Date"></span></a></span>
+
+<br>
+  Time: <input type="text" name="registration_date_1" value="23:21:30" class="vTimeField" size="8" required="" id="id_registration_date_1"><span class="datetimeshortcuts">&nbsp;<a href="http://127.0.0.1:8000/admin/question/user/add/#">Now</a>&nbsp;|&nbsp;<a href="http://127.0.0.1:8000/admin/question/user/add/#" id="clocklink2"><span class="clock-icon" title="Choose a Time"></span></a></span>
+
+
+<br><span class="timezonewarning">Note: You are 3 hours ahead of server time.</span></p><input type="hidden" name="initial-registration_date_0" value="2018-11-05" id="initial-id_registration_date_0"><input type="hidden" name="initial-registration_date_1" value="23:21:30" id="initial-id_registration_date_1">
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-rating">
+            
+            
+                <div>
+                    
+                    
+                        <label class="required" for="id_rating">Рейтинг пользователя:</label>
+                        
+                            <input type="number" name="rating" value="0" class="vIntegerField" required="" id="id_rating">
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+</fieldset>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="submit-row">
+
+<input type="submit" value="Save" class="default" name="_save">
+
+
+<input type="submit" value="Save and add another" name="_addanother">
+<input type="submit" value="Save and continue editing" name="_continue">
+
+
+</div>
+
+
+
+    <script type="text/javascript" id="django-admin-form-add-constants" src="./Add user _ Django site admin_files/change_form.js.Без названия" data-model-name="user">
+    </script>
+
+
+
+
+<script type="text/javascript" id="django-admin-prepopulated-fields-constants" src="./Add user _ Django site admin_files/prepopulate_init.js.Без названия" data-prepopulated-fields="[]">
+</script>
+
+
+</div>
+</form></div>
+
+        
+        <br class="clear">
+    </div>
+    <!-- END Content -->
+
+    <div id="footer"></div>
+</div>
+<!-- END Container -->
+
+
+
+<script type="text/javascript" async="" src="./Add user _ Django site admin_files/vk.js.Без названия"></script><div class="calendarbox module" id="calendarbox0" style="display: none; position: absolute;"><div><a href="http://127.0.0.1:8000/admin/question/user/add/#" class="calendarnav-previous">&lt;</a><a href="http://127.0.0.1:8000/admin/question/user/add/#" class="calendarnav-next">&gt;</a></div><div id="calendarin0" class="calendar"><table><caption>November 2018</caption><tbody><tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr><tr><td class="nonday"> </td><td class="nonday"> </td><td class="nonday"> </td><td class="nonday"> </td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">1</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">2</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">3</a></td></tr><tr><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">4</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">5</a></td><td class="today"><a href="http://127.0.0.1:8000/admin/question/user/add/#">6</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">7</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">8</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">9</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">10</a></td></tr><tr><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">11</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">12</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">13</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">14</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">15</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">16</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">17</a></td></tr><tr><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">18</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">19</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">20</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">21</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">22</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">23</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">24</a></td></tr><tr><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">25</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">26</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">27</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">28</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">29</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">30</a></td><td class="nonday"> </td></tr></tbody></table></div><div class="calendar-shortcuts"><a href="http://127.0.0.1:8000/admin/question/user/add/#">Yesterday</a>&nbsp;|&nbsp;<a href="http://127.0.0.1:8000/admin/question/user/add/#">Today</a>&nbsp;|&nbsp;<a href="http://127.0.0.1:8000/admin/question/user/add/#">Tomorrow</a></div><p class="calendar-cancel"><a href="http://127.0.0.1:8000/admin/question/user/add/#">Cancel</a></p></div><div class="clockbox module" id="clockbox0" style="display: none; position: absolute;"><h2>Choose a time</h2><ul class="timelist"><li><a href="http://127.0.0.1:8000/admin/question/user/add/#">Now</a></li><li><a href="http://127.0.0.1:8000/admin/question/user/add/#">Midnight</a></li><li><a href="http://127.0.0.1:8000/admin/question/user/add/#">6 a.m.</a></li><li><a href="http://127.0.0.1:8000/admin/question/user/add/#">Noon</a></li><li><a href="http://127.0.0.1:8000/admin/question/user/add/#">6 p.m.</a></li></ul><p class="calendar-cancel"><a href="http://127.0.0.1:8000/admin/question/user/add/#">Cancel</a></p></div><div class="calendarbox module" id="calendarbox1" style="display: none; position: absolute;"><div><a href="http://127.0.0.1:8000/admin/question/user/add/#" class="calendarnav-previous">&lt;</a><a href="http://127.0.0.1:8000/admin/question/user/add/#" class="calendarnav-next">&gt;</a></div><div id="calendarin1" class="calendar"><table><caption>November 2018</caption><tbody><tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr><tr><td class="nonday"> </td><td class="nonday"> </td><td class="nonday"> </td><td class="nonday"> </td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">1</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">2</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">3</a></td></tr><tr><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">4</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">5</a></td><td class="today"><a href="http://127.0.0.1:8000/admin/question/user/add/#">6</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">7</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">8</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">9</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">10</a></td></tr><tr><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">11</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">12</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">13</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">14</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">15</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">16</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">17</a></td></tr><tr><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">18</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">19</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">20</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">21</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">22</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">23</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">24</a></td></tr><tr><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">25</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">26</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">27</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">28</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">29</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">30</a></td><td class="nonday"> </td></tr></tbody></table></div><div class="calendar-shortcuts"><a href="http://127.0.0.1:8000/admin/question/user/add/#">Yesterday</a>&nbsp;|&nbsp;<a href="http://127.0.0.1:8000/admin/question/user/add/#">Today</a>&nbsp;|&nbsp;<a href="http://127.0.0.1:8000/admin/question/user/add/#">Tomorrow</a></div><p class="calendar-cancel"><a href="http://127.0.0.1:8000/admin/question/user/add/#">Cancel</a></p></div><div class="clockbox module" id="clockbox1" style="display: none; position: absolute;"><h2>Choose a time</h2><ul class="timelist"><li><a href="http://127.0.0.1:8000/admin/question/user/add/#">Now</a></li><li><a href="http://127.0.0.1:8000/admin/question/user/add/#">Midnight</a></li><li><a href="http://127.0.0.1:8000/admin/question/user/add/#">6 a.m.</a></li><li><a href="http://127.0.0.1:8000/admin/question/user/add/#">Noon</a></li><li><a href="http://127.0.0.1:8000/admin/question/user/add/#">6 p.m.</a></li></ul><p class="calendar-cancel"><a href="http://127.0.0.1:8000/admin/question/user/add/#">Cancel</a></p></div><div class="calendarbox module" id="calendarbox2" style="display: none; position: absolute;"><div><a href="http://127.0.0.1:8000/admin/question/user/add/#" class="calendarnav-previous">&lt;</a><a href="http://127.0.0.1:8000/admin/question/user/add/#" class="calendarnav-next">&gt;</a></div><div id="calendarin2" class="calendar"><table><caption>November 2018</caption><tbody><tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr><tr><td class="nonday"> </td><td class="nonday"> </td><td class="nonday"> </td><td class="nonday"> </td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">1</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">2</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">3</a></td></tr><tr><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">4</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">5</a></td><td class="today"><a href="http://127.0.0.1:8000/admin/question/user/add/#">6</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">7</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">8</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">9</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">10</a></td></tr><tr><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">11</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">12</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">13</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">14</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">15</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">16</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">17</a></td></tr><tr><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">18</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">19</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">20</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">21</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">22</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">23</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">24</a></td></tr><tr><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">25</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">26</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">27</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">28</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">29</a></td><td class=""><a href="http://127.0.0.1:8000/admin/question/user/add/#">30</a></td><td class="nonday"> </td></tr></tbody></table></div><div class="calendar-shortcuts"><a href="http://127.0.0.1:8000/admin/question/user/add/#">Yesterday</a>&nbsp;|&nbsp;<a href="http://127.0.0.1:8000/admin/question/user/add/#">Today</a>&nbsp;|&nbsp;<a href="http://127.0.0.1:8000/admin/question/user/add/#">Tomorrow</a></div><p class="calendar-cancel"><a href="http://127.0.0.1:8000/admin/question/user/add/#">Cancel</a></p></div><div class="clockbox module" id="clockbox2" style="display: none; position: absolute;"><h2>Choose a time</h2><ul class="timelist"><li><a href="http://127.0.0.1:8000/admin/question/user/add/#">Now</a></li><li><a href="http://127.0.0.1:8000/admin/question/user/add/#">Midnight</a></li><li><a href="http://127.0.0.1:8000/admin/question/user/add/#">6 a.m.</a></li><li><a href="http://127.0.0.1:8000/admin/question/user/add/#">Noon</a></li><li><a href="http://127.0.0.1:8000/admin/question/user/add/#">6 p.m.</a></li></ul><p class="calendar-cancel"><a href="http://127.0.0.1:8000/admin/question/user/add/#">Cancel</a></p></div></body></html>

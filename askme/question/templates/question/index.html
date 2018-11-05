@@ -3,36 +3,46 @@
 {% load static %}
 {% block content %}
     <!-- Begin page content -->    
-  
+    <div class="btn-group" role="group" aria-label="Basic example">
+        <a href="{% url 'new' %}" class="btn btn-outline-primary" style="width:243px">Новые</a>
+        <a href="{% url 'top' %}" class="btn btn-outline-primary" style="width:243px">Рейтинг</a>
+        <a href="{% url 'top' %}" class="btn btn-outline-primary" style="width:243px">Понравилось</a>
+    </div>
+
     {% for q in questions %}
-    <div class="row question_item">
-        <div class="col-2">
-            <div class="row" align="center">
-                <div class="img">
-                    <img src="{% static "img/ld.png" %}" alt="" class="ava1">
-                </div>
-            </div>
-            <div class="under_img">
-                <div class="row">
-                    {{ q.author }}
-                </div>
-                <div class="row">
-                    <span>                                
-                        <button type="button" class="my_btn2"></button>
-                        <a>{{q.rating}}</a>
-                        <button type="button" class="my_btn1"></button>
-                    </span>
-                </div>
-            </div>
+    <div class="media question_item">
+        <div class="media-left mr-4">
+            <table >
+                <tr>
+                    <td align="center">                   
+                        <img class="ava" src="{{ MEDIA_URL }}{{ q.author.upload }}" alt="{% static 'img/ld2.png' %}">
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        <a href="{% url 'user' id=q.author.id %}">{{ q.author }}</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        <span>                                
+                            <button type="button" class="my_btn2"></button>
+                            <a>{{ q.rating }}</a>
+                            <button type="button" class="my_btn1"></button>
+                        </span>
+                    </td>
+                </tr>
+            </table>                    
         </div>
-        <div class="col-10">
+        <div class="media-body">
             <a href="{% url 'question' id=q.id %}">
-                <h3>{{ q.title }}</h3>
+                <h4>{{ q.title }}</h4>
             </a>
-            <p>{{ q.text }}</p>
+            <p>{{ q.text }}</p>   
+            <p>{{ q.create_date }}</p>          
             <div class="row">
                 <div class="col">
-                    <a href="">Ответы(2)</a>
+                    <a href="{% url 'question' id=q.id %}">Ответы({{ Answer.objects.get_len }})</a>
                 </div>
                 <div class="col">
                     Тэги: 

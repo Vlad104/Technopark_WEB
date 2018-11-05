@@ -18,6 +18,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from question import views
+from django.conf import settings
+from django.conf.urls.static import static
 #from question.views import QuestionList, AnswerList, TagList
 
 
@@ -33,6 +35,11 @@ urlpatterns = [
     path('ask/', views.ask, name='ask'),
     path('login/', views.login, name='login'),
     path('registration/', views.registration, name='registration'),    
-    path('settings/', views.settings, name='settings'),
+    path('user/<int:id>', views.user, name='user'),
     path('admin/', admin.site.urls),
 ]
+
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    #urlpatterns += staticfiles_urlpatterns()

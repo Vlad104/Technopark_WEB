@@ -3,27 +3,50 @@
 {% load static %}
 {% block content %}
     <!-- Begin page content -->
-    <div class="row">
-        <div class="col-2">
-            <div class="row">
-                <div class="img">
-                    <img src="{% static "img/ld.png" %}" alt="">
-                </div>
-            </div>
-            <div class="row" align="center">
-                {{ question.author }}
-            </div>
+    <div class="media one_question_item">
+        <div class="media-left mr-4">
+            <table >
+                <tr>
+                    <td align="center">
+                        <img class="ava" src="{{ MEDIA_URL }}{{ question.author.upload }}" alt="{% static "img/ld2.png" %}">
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        <a href="{% url 'user' id=question.author.id %}">{{ question.author }}</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        <span>                                
+                            <button type="button" class="my_btn2"></button>
+                            <a>{{question.rating}}</a>
+                            <button type="button" class="my_btn1"></button>
+                        </span>
+                    </td>
+                </tr>
+            </table>                    
         </div>
-        <div class="col-10">
-            <div class="row">
-                <h2>{{ question.title }}</h2>
-                <p>{{ question.text }}</p>
-            </div>
+        <div class="media-body">
+            <a>
+                <h4>{{ question.title }}</h4>
+            </a>
+            <p>{{ question.text }}</p>   
+            <p>{{ question.create_date }}</p>
+            <p>
+                Тэги: 
+                {% for qt in question.tags.all %}
+                    <a href="">{{ qt }}</a>
+                {% endfor %}
+            </p> 
+              
+            {% block answers %}
+                {% include "question/answers.html" %}
+            {% endblock %}
+
         </div>
     </div>
 
-    {% block answers %}
-        {% include "question/answers.html" %}
-    {% endblock %}
+
 
 {% endblock %}

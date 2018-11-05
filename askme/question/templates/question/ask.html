@@ -3,26 +3,24 @@
 {% load static %}
 {% block content %}
     <!-- Begin page content -->
-    <div class="row">
-        <h3>Задайте новый вопрос</h3> 
-    </div>                   
-    <div class="row">
-        <form>
-          <div class="form-group">
-            <label for="exampleFormControlInput1">Введите тему вопроса
-            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Тема"></label>
-          </div>
-          <div class="form-group">
-            <label for="exampleFormControlTextarea1">
-                Введите подробное описание вопроса
-            </label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
-          </div>
-          <div class="form-group">
-            <label for="exampleFormControlInput1">Добавьте тэги</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Тэг"></label>
-          </div>
-          <button type="submit" class="btn btn-primary">Задать</button>
-        </form>
+<h3>Задайте новый вопрос</h3> 
+<form>
+    <div class="form-group">
+        <label for="exampleFormControlInput1">Введите тему вопроса
+          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Тема">
+          <small id="emailHelp" class="form-text text-muted">Выбирайте тему мудро</small>
+        </label>
     </div>
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">
+            Введите подробное описание вопроса
+        </label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlInput1">Добавьте тэги</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Тэг"></label>
+    </div>
+    <button type="submit" class="btn btn-primary" style="margin: 15px 0px 0px 0px">Опубликовать</button>
+</form>
 {% endblock %}

@@ -2,8 +2,8 @@
 {% block navbar %}
 
 <!-- Fixed navbar -->
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <div class="img">
+<nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #30006f; margin: 0px;">
+    <div>
         <img src="{% static "img/logo.png" %}" alt="">                
     </div>
     <a class="navbar-brand" href="#">
@@ -23,16 +23,16 @@
         </ul>
         <form class="form-inline mt-2 mt-md-0">
             <input class="form-control mr-sm-2" type="text" placeholder="Поиск" aria-label="Поиск">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Search</button>
         </form>
     </div>
-    <div class="img">
-        <img src="{% static "img/ld.png" %}" alt="">                
+    <div class="ava">
+        <img src="{% static "img/ld.png" %}" alt="" style="width:40px;height:40px;">
     </div>
 
     <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-            <a class="nav-link" href="{% url 'settings' %}">Имя<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="">Профиль<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item active">
             <a class="nav-link" href="{% url 'login' %}">Выйти<span class="sr-only">(current)</span></a>

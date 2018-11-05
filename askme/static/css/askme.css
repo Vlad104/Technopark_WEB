@@ -15,9 +15,11 @@ body {
     /* Set the fixed height of the footer here */
     height: 60px;
     line-height: 60px; /* Vertically center the text there */
-    background-color: #400000;
 }
 
+.navbar {
+    padding: 0px 10px 0px 0px;
+}
 
 /* Custom page CSS
 -------------------------------------------------- */
@@ -35,65 +37,75 @@ body > .container {
 code {
     font-size: 80%;
 }
+
 .question_item {
-    border: solid 1px #adadad;
-    background-color: #adadad
+    background-color: #fdfefe;
     padding: 15px;
-    border-radius: 40px;
-    margin: 20px;
+    margin: 20px 0px 20px 0px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 2px #0000ff;
 }
 
-.question_item img {
-    height: 50px;
-    width: 50px;
+.one_question_item {
+    background-color: #e7e7f0;
+    box-shadow: 0px 0px 5px 2px #e7e7f0;
+    padding: 15px;
+    margin: 20px 0px 20px 0px;
+    border-radius: 5px;
+}
+
+.answer_item {
+    background-color: #fefefe;
+    padding: 15px;
+    margin: 20px 0px 20px 0px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #0000ff;
+    border-radius: 5px;
 }
 
 .my_btn1 {
-    position: relative;
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    line-height: 20px;
     vertical-align: middle;
     text-align: center;
-    text-decoration: none;
-    color: #00ff00;
-    outline: none;
+    width: 20px;
+    height: 20px;
     border-radius: 20px;
-    box-shadow: 0 0 0 1px #ddd inset, 0 1px 1px #fff;
 }
 .my_btn1:hover {
-    background: #dcdcdc linear-gradient(#fff, #00ff00);
-    box-shadow: 0 0 0 1px #aaa inset, 0 1px 1px #aaa;
+    background: #0000ff;
+    box-shadow: 0px 0px 5px 2px #0000ff;
 }
 .my_btn1:active {
-    background: none;
-    box-shadow: 0 0 0 1px #bbb inset, 0 1px 3px rgba(7,163,48,.5) inset, 0 1px 2px #fff;
+    background: #00007f;
+}
+
+.my_btn2 {
+    vertical-align: middle;
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+}
+.my_btn2:hover {
+    background: #ff0000;
+    box-shadow: 0px 0px 5px 2px #ff0000;
+}
+.my_btn2:active {
+    background: #7f0000;
 }
 
 .ava {
-    margin: 10px;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     position: relative;
     width:64px;
     height:64px;
-    background: #c2c2c2;
-    border: 1px solid #000;
+    background: #30006f;
+    border: 1px solid #30006f;
     border-radius: 50%;
 }
 
-.img{
-    margin: 10px;
-    padding: 0;
-    position: relative;
-    width:40px;
-    height:40px;
-    background: #c2c2c2;
-    border: 1px solid #000;
-    border-radius: 50%;
-}
-
-.img img{
+.ava img{
     position: absolute;
     left:50%;
     top:50%;
@@ -102,37 +114,15 @@ code {
     max-height: 100%;
 }
 
-.under_img {
-    align-self: center;
-    align-content: center;
-}
-
-.answer_item {
-    border: solid 1px #adadad;
+.sidebar {
+    background-color: #e7e7f0;
+    box-shadow: 0px 0px 5px 2px #e7e7f0;
     padding: 15px;
-    border-radius: 20px;
-    margin: 10px;
+    margin: 20px 0px 0px 0px;
+    border-radius: 5px;
 }
 
-.my_btn2 {
-    position: relative;
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    line-height: 20px;
-    vertical-align: middle;
-    text-align: center;
-    text-decoration: none;
-    color: #00ff00;
-    outline: none;
-    border-radius: 20px;
-    box-shadow: 0 0 0 1px #ddd inset, 0 1px 1px #fff;
-}
-.my_btn2:hover {
-    background: #dcdcdc linear-gradient(#fff, #ff0000);
-    box-shadow: 0 0 0 1px #aaa inset, 0 1px 1px #aaa;
-}
-.my_btn2:active {
-    background: none;
-    box-shadow: 0 0 0 1px #bbb inset, 0 1px 3px rgba(7,163,48,.5) inset, 0 1px 2px #fff;
+.img-thumbnail {
+    width: 150px;
+    height: 150px;
 }
