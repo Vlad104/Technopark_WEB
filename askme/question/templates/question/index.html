@@ -32,17 +32,21 @@
                         </span>
                     </td>
                 </tr>
+                <tr>
+                    <td align="center">
+                        <a href="{% url 'question' id=q.id %}">Ответы({{ Answer.objects.get_len }})</a>
+                    </td>
+                </tr>                                    
             </table>                    
         </div>
         <div class="media-body">
             <a href="{% url 'question' id=q.id %}">
                 <h4>{{ q.title }}</h4>
             </a>
-            <p>{{ q.text }}</p>   
-            <p>{{ q.create_date }}</p>          
+            <p>{{ q.text }}</p>           
             <div class="row">
                 <div class="col">
-                    <a href="{% url 'question' id=q.id %}">Ответы({{ Answer.objects.get_len }})</a>
+                    {{ q.create_date }}
                 </div>
                 <div class="col">
                     Тэги: 

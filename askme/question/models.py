@@ -61,6 +61,7 @@ class Answer(models.Model):
 class Like(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    answer = models.ForeignKey(Answer, on_delete=models.CASCADE)
 
     objects = LikeManager()
     

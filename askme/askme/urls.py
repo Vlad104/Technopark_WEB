@@ -20,22 +20,19 @@ from django.urls import path
 from question import views
 from django.conf import settings
 from django.conf.urls.static import static
-#from question.views import QuestionList, AnswerList, TagList
-
+#from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
-    #path('', QuestionList.as_view(), name='index'),
-    #path('', TagList.as_view(), name='index'),
-    #path('question/<int:id>/', AnswerList.as_view(), name='answers'),
     path('', views.index, name='index'),
     path('top', views.top, name='top'),
     path('new', views.new, name='new'),
-    path('<tag>', views.tag, name='tag'),
+    path('tag/<int:id>', views.tag, name='tag'),
     path('question/<int:id>/', views.question, name='question'),
     path('ask/', views.ask, name='ask'),
     path('login/', views.login, name='login'),
     path('registration/', views.registration, name='registration'),    
-    path('user/<int:id>', views.user, name='user'),
+    path('user/<int:id>', views.user, name='user'),  
+    path('user/questions/<int:id>', views.user_questions, name='user_questions'),
     path('admin/', admin.site.urls),
 ]
 

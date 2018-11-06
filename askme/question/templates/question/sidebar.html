@@ -4,7 +4,7 @@
     <div class="sidebar">
         <h4>Популярные тэги</h4>
         {% for t in tags %}
-            <a href="{% url 'tag' tag=t %}">{{ t.title }}</a>
+            <a href="{% url 'tag' id=t.id %}">{{ t.title }}</a>
         {% endfor %}
         <p>
         <h4>Топ пользователей</h4>

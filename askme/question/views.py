@@ -8,25 +8,6 @@ from question.models import Question, Tag, User, Answer, Like
 
 # Create your views here. ## MY code
 
-#class QuestionList(ListView):
-#	model = Question
-#	template_name = 'question/index.html'
-#	context_object_name = 'questions'
-#	paginate_by = 5
-
-#class AnswerList(ListView):
-#    model = Answer
-#    template_name = 'question/answers.html'
-#    context_object_name = 'answers'
-#    paginate_by = 5
-
-#class TagList(ListView):
-#    model = Tag
-#    #queryset = Tag.objects.all()
-#    template_name = 'question/index.html'
-#    context_object_name = 'tags'
-#    paginate_by = 10
-
 def index(request):
     return render(request, 'question/index.html', {
 	    	'questions': paginate(request, Question.objects.all()),
@@ -58,12 +39,18 @@ def user(request, id):
             'user': get_object_or_404(User, pk=id),
             'tags' : paginate(request, Tag.objects.hottest()),
             'users' : paginate(request, User.objects.by_rating()),
+    })
+
+def user_questions(request, id):
+    return render(request, 'question/index.html', {
+            'questions': paginate(request, Question.objects.get_by_user(user_id=id)),
+            'tags' : paginate(request, Tag.objects.hottest()),
+            'users' : paginate(request, User.objects.by_rating()),
     })    
 
-def tag(request, tag):
+def tag(request, id):
     return render(request, 'question/index.html', {
-            'questions': Question.objects.get_by_tag(question_id=id, tag=tag),
-            #'questions': paginate(request, Question.objects.get_by_tag(question_id=id, tag=tag)),
+            'questions': paginate(request, Question.objects.get_by_tag(tag_id=id)),
             'tags' : paginate(request, Tag.objects.hottest()),
             'users' : paginate(request, User.objects.by_rating()),
     })

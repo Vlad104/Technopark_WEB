@@ -59,7 +59,8 @@
     </div>
     <div class="col-3">  
         <img src="{{ MEDIA_URL }}{{ user.upload }}" alt="" class="img-thumbnail"> 
-        <p> Рейтинг: {{ user.rating }} 
+        <p> Рейтинг: {{ user.rating }} </p>
+        <p><a href="{% url 'user_questions' id=user.id %}">Вопросы пользователя</a></p>
     </div>
 </div>
 

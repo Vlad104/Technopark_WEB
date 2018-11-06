@@ -13,9 +13,11 @@ class QuestionManager(models.Manager):
     def get_by_id(self, question_id):
         return self.all().filter(id=question_id)
 
-    def get_by_tag(self, question_id, tag):
-        #return self.all().filter(tags__exact=tag)
-        return self.all()
+    def get_by_tag(self, tag_id):
+        return self.all().filter(tags__id=tag_id)
+
+    def get_by_user(self, user_id):
+        return self.all().filter(author__id=user_id)
 
     def get_answer_count(self, question_id):
         return self.all().filter(question_id=question_id).count()
