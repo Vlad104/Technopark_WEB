@@ -37,6 +37,7 @@ class Question(models.Model):
     is_active = models.BooleanField(default=True, verbose_name=u"Доступность вопроса")
     tags = models.ManyToManyField(Tag, blank=True)
     rating = models.IntegerField(default=0, null=False, verbose_name="Рейтинг вопроса")
+    #votes = GenericRelation(Like, related_query_name='questions')
 
     objects = QuestionManager()
 
@@ -52,6 +53,7 @@ class Answer(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
     create_date = models.DateTimeField(default=datetime.now, verbose_name=u"Время ответа")
     rating = models.IntegerField(default=0, null=False, verbose_name="Рейтинг ответа")
+    #votes = GenericRelation(Like, related_query_name='answers')
 
     objects = AnswerManager()
 

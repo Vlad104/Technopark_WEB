@@ -10,9 +10,6 @@ class QuestionManager(models.Manager):
     def get_new(self):
         return self.all().order_by('create_date').reverse()
 
-    def get_by_id(self, question_id):
-        return self.all().filter(id=question_id)
-
     def get_by_tag(self, tag_id):
         return self.all().filter(tags__id=tag_id)
 
@@ -56,5 +53,17 @@ class UserManager(UserManager):
         return self.order_by('first_name')
 
 class LikeManager(models.Manager):
-    def likes(self):
-        return 0
+    def liked(self):
+        return self.get_queryset().filter(vote__gt=0)
+
+    def disliked(self):
+        return self.get_queryset().filter(vote__lt=0)
+
+    def rating(self):
+        return self.get_queryset().aggregate(Sum('vote')).get('vote__sum') or 0
+
+    def questions(self):
+        return self.get_queryset().filter(content_type__model='question').order_by('-question__create_date')
+
+    def answers(self):
+        return self.get_queryset().filter(content_type__model='answer').order_by('-answer__create_date')
