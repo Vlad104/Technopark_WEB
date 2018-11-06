@@ -34,7 +34,7 @@
                 </tr>
                 <tr>
                     <td align="center">
-                        <a href="{% url 'question' id=q.id %}">Ответы({{ Answer.objects.get_len }})</a>
+                        <a href="{% url 'question' id=q.id %}">Ответы {{ Answer.objects.get_len }}</a>
                     </td>
                 </tr>                                    
             </table>                    
