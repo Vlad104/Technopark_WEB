@@ -26,19 +26,32 @@
             <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Search</button>
         </form>
     </div>
+
+    {% if user.is_authenticated %}
     <div class="ava">
-        <img src="{% static "img/Internet.png" %}" alt="" style="width:40px;height:40px;">
+        <img src="{{ MEDIA_URL }}{{ user.upload }}" alt="" style="width:40px;height:40px;">
     </div>
 
+    <div class="btn-group" role="group">
+        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" style="background-color: #30006f; border-color: #30006f;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+            {{ user }}
+        </button>
+        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+          <a class="dropdown-item" href="/user/1">Настройки</a>
+          <a class="dropdown-item" href="{% url 'signout' %}">Выйти</a>
+        </div>
+    </div>
+    {% else %}
     <div class="btn-group" role="group">
         <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" style="background-color: #30006f; border-color: #30006f;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
           Профиль
         </button>
         <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-          <a class="dropdown-item" href="/user/1">Настройки</a>
-          <a class="dropdown-item" href="{% url 'login' %}">Выйти</a>
+          <a class="dropdown-item" href="{% url 'login' %}">Войти</a>
         </div>
-    </div>
+    </div>       
+    {% endif %}
+
 
 </nav>
 

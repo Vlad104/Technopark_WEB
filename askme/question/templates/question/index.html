@@ -59,21 +59,9 @@
     </div>
     {% endfor %}
 
-    <div class="pagination">
-        <span class="step-links">
-            {% if questions.has_previous %}
-                <a href="?page={{ questions.previous_page_number }}"><-</a>
-            {% endif %}
-
-            <span class="current">
-                Page {{ questions.number }} of {{ questions.paginator.num_pages }}.
-            </span>
-
-            {% if questions.has_next %}
-                <a href="?page={{ questions.next_page_number }}">-></a>
-            {% endif %}
-        </span>
-    </div>
+    {% block paginator %}
+        {% include "question/paginator.html" %}
+    {% endblock %}
 
 {% endblock %}
 

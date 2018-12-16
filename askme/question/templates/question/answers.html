@@ -35,26 +35,13 @@
     </div>
 {% endfor %}
 
-<div class="form-group">
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5">Комментировать</textarea>
-</div>
+{% block new_answer %}
+    {% include "question/new_answer.html" %}
+{% endblock %}
 
-<button type="submit" class="btn btn-primary" style="margin: 0px 0px 10px 0px">Ответить</button>
 
-<div class="pagination">
-    <span class="step-links">
-        {% if answers.has_previous %}
-            <a href="?page={{ answers.previous_page_number }}"><-</a>
-        {% endif %}
-
-        <span class="current">
-            Page {{ answers.number }} of {{ answers.paginator.num_pages }}.
-        </span>
-
-        {% if answers.has_next %}
-            <a href="?page={{ answers.next_page_number }}">-></a>
-        {% endif %}
-    </span>
-</div>
+{% block paginator %}
+    {% include "question/paginator.html" %}
+{% endblock %}
 
 {% endblock %}
