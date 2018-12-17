@@ -42,6 +42,24 @@ def user(request, id):
             'users' : paginate(request, User.objects.by_rating()),
     })
 
+def edit(request, id):
+    if request.method == 'POST':
+        form = UserRegistrationForm(request.POST, request.FILES)
+        if form.is_valid():
+            user = form.save()
+            user.set_password(form.cleaned_data['password'])
+            user.save()
+            login(request, user)
+            return redirect('/')
+    else:
+        form = UserRegistrationForm()
+        logout(request)
+    return render(request, 'question/edit.html', {
+            'form': form,
+            'tags' : paginate(request, Tag.objects.hottest()),
+            'users' : paginate(request, User.objects.by_rating()),
+        })
+
 def user_questions(request, id):
     return render(request, 'question/index.html', {
             'questions': paginate(request, Question.objects.get_by_user(user_id=id)),
