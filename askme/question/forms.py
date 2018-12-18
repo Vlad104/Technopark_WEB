@@ -72,7 +72,7 @@ class UserLoginForm(forms.ModelForm):
         password = self.cleaned_data.get('password')
         user = authenticate(username=username, password=password)
         if not user or not user.is_active:
-            raise ValidationError("Sorry, that login or password is invalid. Please try again.")
+            raise ValidationError("Логин или пароль неверны")
         return self.cleaned_data
 
     class Meta:

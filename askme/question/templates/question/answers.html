@@ -35,6 +35,7 @@
     </div>
 {% endfor %}
 
+<a href="{% url 'new_answer' id=question.id %}">{{ answer.author }}</a>
 {% block new_answer %}
     {% include "question/new_answer.html" %}
 {% endblock %}
