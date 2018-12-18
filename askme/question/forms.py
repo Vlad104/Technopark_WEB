@@ -12,23 +12,23 @@ password_validator = RegexValidator(r"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$",
 class UserRegistrationForm(forms.ModelForm):
     first_name = forms.CharField(validators=[text_validator], widget=forms.TextInput(attrs={
         'class': 'form-control',
-        'minlength': 2,
+        'minlength': 1,
         'maxlength': 30,
-        'placeholder': 'First name'
+        'placeholder': 'Имя'
     }))
 
     last_name = forms.CharField(validators=[text_validator],widget=forms.TextInput(attrs={
         'class': 'form-control',
-        'minlength': 2,
+        'minlength': 1,
         'maxlength': 30,
-        'placeholder': 'Last name'
+        'placeholder': 'Фамилия'
     }))
 
     username = forms.CharField(validators=[text_validator],widget=forms.TextInput(attrs={
         'class': 'form-control',
         'minlength': 5,
         'maxlength': 30,
-        'placeholder': 'Username'}))
+        'placeholder': 'Логин'}))
 
     email = forms.EmailField(widget=forms.EmailInput(attrs={
         'class': 'form-control',
@@ -36,11 +36,11 @@ class UserRegistrationForm(forms.ModelForm):
 
     password = forms.CharField(validators=[password_validator], widget=forms.PasswordInput(attrs={
         'class': 'form-control',
-        'placeholder': 'Password'}))
+        'placeholder': 'Пароль'}))
 
     password_confirmation = forms.CharField(widget=forms.PasswordInput(attrs={
         'class': 'form-control',
-        'placeholder': 'Password confirmation'}))
+        'placeholder': 'Подтверждение пароля'}))
 
     def clean(self):
         cleaned_data = super(UserRegistrationForm, self).clean()
@@ -61,11 +61,11 @@ class UserLoginForm(forms.ModelForm):
     username = forms.CharField(widget=forms.TextInput(attrs={
         'class': 'form-control',
         'maxlength': 30,
-        'placeholder': 'Username'}))
+        'placeholder': 'Логин'}))
 
     password = forms.CharField(widget=forms.PasswordInput(attrs={
         'class': 'form-control',
-        'placeholder': 'Password'}))
+        'placeholder': 'Пароль'}))
 
     def clean(self):
         username = self.cleaned_data.get('username')
@@ -86,19 +86,19 @@ class UserSettingsForm(forms.ModelForm):
         'class': 'form-control',
         'minlength': 2,
         'maxlength': 30,
-        'placeholder': 'First name'}))
+        'placeholder': 'Имя'}))
 
     last_name = forms.CharField(required=False,validators=[text_validator], widget=forms.TextInput(attrs={
         'class': 'form-control',
         'minlength': 2,
         'maxlength': 30,
-        'placeholder': 'Last name'}))
+        'placeholder': 'Фамилия'}))
 
     username = forms.CharField(validators=[text_validator],required=False,widget=forms.TextInput(attrs={
         'class': 'form-control',
         'minlength': 5,
         'maxlength': 30,
-        'placeholder': 'Username'}))
+        'placeholder': 'Логин'}))
 
     email = forms.EmailField(required=False,widget=forms.EmailInput(attrs={
         'class': 'form-control',

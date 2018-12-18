@@ -33,9 +33,9 @@ urlpatterns = [
     path('login/', views.signin, name='login'),
     path('registration/', views.registration, name='registration'),   
     path('signout/', views.signout, name='signout'),   
-    path('user/<int:id>', views.user, name='user'),  
-    path('user/<int:id>/edit', views.edit, name='edit'),  
-    path('user/questions/<int:id>', views.user_questions, name='user_questions'),
+    path('user/<int:id>/', views.user, name='user'),  
+    path('user/edit/', views.edit, name='edit'),  
+    path('user/questions/<int:id>/', views.user_questions, name='user_questions'),
     path('admin/', admin.site.urls),
 ]
 

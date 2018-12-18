@@ -37,23 +37,26 @@ def new(request):
 
 def user(request, id):
     return render(request, 'question/user.html', {
-            'user': get_object_or_404(User, pk=id),
+            #'user': get_object_or_404(User, pk=id),
+            'profile': get_object_or_404(User, pk=id),
             'tags' : paginate(request, Tag.objects.hottest()),
             'users' : paginate(request, User.objects.by_rating()),
     })
 
-def edit(request, id):
+
+#@login_required(login_url='/login/')
+def edit(request):
     if request.method == 'POST':
-        form = UserRegistrationForm(request.POST, request.FILES)
+        form = UserSettingsForm(instance=user,
+                               data=request.POST,
+                               files=request.FILES
+                              )
         if form.is_valid():
-            user = form.save()
-            user.set_password(form.cleaned_data['password'])
-            user.save()
-            login(request, user)
-            return redirect('/')
+            form.save()
+            return profile(request, user.username)
     else:
-        form = UserRegistrationForm()
-        logout(request)
+        form = UserSettingsForm(instance=user)
+
     return render(request, 'question/edit.html', {
             'form': form,
             'tags' : paginate(request, Tag.objects.hottest()),
@@ -85,7 +88,7 @@ def question(request, id):
    	})
 
 
-#@login_required(login_url='/signin/')
+#@login_required(login_url='/login/')
 def new_answer(request, question_id):
     if Question.objects.filter(id=question_id).exists():
         if request.method == 'POST':
@@ -171,7 +174,8 @@ def signout(request):
     if not request.user.is_authenticated:
         raise Http404
     logout(request)
-    return redirect(request.GET['from'])
+    #return redirect(request.GET['from'])
+    return redirect('/')
 
 
 def paginate(request, objects_list):

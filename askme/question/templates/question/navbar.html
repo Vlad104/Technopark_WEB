@@ -37,7 +37,8 @@
             {{ user }}
         </button>
         <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-          <a class="dropdown-item" href="/user/1">Настройки</a>
+          <a class="dropdown-item" href="{% url 'user' id=user.id  %}">Профиль</a>
+          <a class="dropdown-item" href="{% url 'edit' %}">Настройки</a>
           <a class="dropdown-item" href="{% url 'signout' %}">Выйти</a>
         </div>
     </div>

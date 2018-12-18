@@ -2,7 +2,68 @@
 
 {% load static %}
 {% block content %}
-    <!-- Begin page content -->
+
+<div class="row">
+    <div class="col-9">
+    <form>
+        <div class="form-group row">
+            <div class="col-2">
+                Логин
+            </div>
+            <div class="col-10">
+                {{profile}}
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-2">
+                Имя
+            </div>
+            <div class="col-10">
+                {{profile.first_name}}
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-2">
+                Фамилия
+            </div>
+            <div class="col-10">
+                {{profile.last_name}}
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-2">
+                Почта
+            </div>
+            <div class="col-10">
+                {{ profile.email }}
+            </div>
+        </div>
+       
+        {% if user.is_authenticated and user.id == profile.id%}
+        <div class="form-group row">
+            <div class="col-sm-10">
+                <a href="{% url 'edit' %}" class="btn btn-primary">Редактировать</a>
+            </div>
+        </div>
+        {% endif %}
+    </form>
+    </div>
+
+    <div class="col-3">  
+        <img src="{{ MEDIA_URL }}{{ profile.upload }}" alt="" class="img-thumbnail"> 
+        <p> Рейтинг: {{ profile.rating }} </p>
+        <p><a href="{% url 'user_questions' id=profile.id %}">Вопросы пользователя</a></p>
+    </div>
+</div>
+
+{% endblock %}
+
+
+<!--
+
 <div class="row">
     <div class="col-9">
     <form>
@@ -65,7 +126,4 @@
         <p><a href="{% url 'user_questions' id=user.id %}">Вопросы пользователя</a></p>
     </div>
 </div>
-
-
-
-{% endblock %}
+-->
