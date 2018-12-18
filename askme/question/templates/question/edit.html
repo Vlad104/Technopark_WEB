@@ -1,0 +1,26 @@
+{% extends "question/base.html" %}
+
+{% load static %}
+{% block content %}
+    <div class="main">
+        <form enctype="multipart/form-data" class="form-horizontal" action="{{ request.path }}" method="post">
+            {% csrf_token %}
+            <div class="col-md-6">
+                <fieldset>
+
+                    {% for field in form %}
+                        <div class="form-group">
+                            {{ field }}
+                        </div>
+                    {% endfor %}
+
+                    <div class="form-group">
+                        <input type="submit" value="Register" class="btn btn-success"/>
+                    </div>
+
+                </fieldset>
+            </div>
+        </form>
+    </div>
+{% endblock %}
+
