@@ -5,6 +5,16 @@
         <div class="media-left mr-4">
             <table >
                 <tr>
+                    {% if user.id == question.author.id %}
+                        <button class="my_btn1 js-approve-answer" data-answer_id="{{ answer.id }}"></button>                        
+                        {% csrf_token %}  
+                    {% endif %}                      
+                    {% if answer.approved %}
+                        <button class="my_btn1"></button>                        
+                        {% csrf_token %}
+                    {% endif %}
+                </tr>
+                <tr>
                     <td align="center">
                         <img class="ava" src="{{ MEDIA_URL }}{{ answer.author.upload }}" alt="{% static "img/ld2.png" %}">
                     </td>
@@ -17,9 +27,11 @@
                 <tr>
                     <td align="center">
                         <span>                                
-                            <button type="button" class="my_btn2"></button>
-                            <a>{{answer.rating}}</a>
-                            <button type="button" class="my_btn1"></button>
+                            <button class="my_btn2 js-like-answer" data-answer_id="{{ answer.id }}" data-like_type="dislike"></button>
+                            {% csrf_token %}   
+                            <a>{{ answer.rating }}</a>
+                            <button class="my_btn1 js-like-answer" data-answer_id="{{ answer.id }}" data-like_type="like"></button>                        
+                            {% csrf_token %}
                         </span>
                     </td>
                 </tr>

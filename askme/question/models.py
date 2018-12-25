@@ -53,6 +53,7 @@ class Answer(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
     create_date = models.DateTimeField(default=datetime.now, verbose_name=u"Время ответа")
     rating = models.IntegerField(default=0, null=False, verbose_name="Рейтинг ответа")
+    approved = models.BooleanField(default=False, verbose_name=u"Одобрен автором вопроса")
     #votes = GenericRelation(Like, related_query_name='answers')
 
     objects = AnswerManager()

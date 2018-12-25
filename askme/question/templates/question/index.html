@@ -25,10 +25,12 @@
                 </tr>
                 <tr>
                     <td align="center">
-                        <span>                                
-                            <button type="button" class="my_btn2"></button>
+                        <span>                     
+                            <button class="my_btn2 js-like-question" data-question_id="{{ q.id }}" data-like_type="dislike"></button>
+                            {% csrf_token %}   
                             <a>{{ q.rating }}</a>
-                            <button type="button" class="my_btn1"></button>
+                            <button class="my_btn1 js-like-question" data-question_id="{{ q.id }}" data-like_type="like"></button>                        
+                            {% csrf_token %}
                         </span>
                     </td>
                 </tr>

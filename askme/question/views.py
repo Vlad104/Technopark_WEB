@@ -5,8 +5,9 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 #from django.views.generic import ListView
 from django.contrib.auth import authenticate, login, logout
-from django.http import Http404, HttpResponseForbidden as Http403, HttpResponse
+from django.http import Http404, HttpResponseForbidden as Http403, HttpResponse, JsonResponse
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.http import require_POST
 from django.views import View
 import json
 from django.utils import timezone
@@ -204,3 +205,48 @@ def paginate(request, objects_list):
         objects = paginator.page(paginator.num_pages)
 
     return objects
+
+@require_POST
+def like_question(request):
+    question_id = request.POST.get('question_id', '')
+    like_type = request.POST.get('like_type', '')
+    question =get_object_or_404(Question, pk=question_id)
+    if not question:
+        return JsonResponse({"status": "error"})
+
+    if (like_type == 'like'):
+        question.rating += 1
+    elif (like_type == 'dislike'):
+        question.rating -= 1
+    question.save()
+
+    return JsonResponse({"status": "ok"})
+
+@require_POST
+def like_answer(request):
+    answer_id = request.POST.get('answer_id', '')
+    like_type = request.POST.get('like_type', '')
+    answer =get_object_or_404(Answer, pk=answer_id)
+    if not answer:
+        return JsonResponse({"status": "error"})
+
+    if (like_type == 'like'):
+        answer.rating += 1
+    elif (like_type == 'dislike'):
+        answer.rating -= 1
+    answer.save()
+
+    return JsonResponse({"status": "ok"})
+
+
+@require_POST
+def approve_answer(request):
+    answer_id = request.POST.get('answer_id', '')
+    answer =get_object_or_404(Answer, pk=answer_id)
+    if not answer:
+        return JsonResponse({"status": "error"})
+
+    answer.approved = not answer.approved
+    answer.save()
+
+    return JsonResponse({"status": "ok"})

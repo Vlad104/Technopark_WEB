@@ -36,6 +36,9 @@ urlpatterns = [
     path('user/<int:id>/', views.profile, name='user'),  
     path('user/edit/', views.edit, name='edit'),  
     path('user/questions/<int:id>/', views.user_questions, name='user_questions'),
+    path('like_question/', views.like_question, name='like_question'),
+    path('like_answer/', views.like_answer, name='like_answer'),
+    path('approve_answer/', views.approve_answer, name='approve_answer'),
     path('admin/', admin.site.urls),
 ]
 
