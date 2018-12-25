@@ -84,16 +84,16 @@ def tag(request, id):
     })
 
 def question(request, id):	
-    if request.method == 'POST':
-        return new_answer(request, id)
-    else:
-        return render(request, 'question/question.html', {
-	    	'question': get_object_or_404(Question, pk=id),
-            'answers' : paginate(request, Answer.objects.get_hot_for_answer(id)),
-            'tags' : paginate(request, Tag.objects.hottest()),
-            'users' : paginate(request, User.objects.by_rating()),
-            'page_objects' : paginate(request, Answer.objects.get_hot_for_answer(id)),
-   	    })
+    #if request.method == 'POST':
+    #    return new_answer(request, id)
+    #else:
+    return render(request, 'question/question.html', {
+    	'question': get_object_or_404(Question, pk=id),
+        'answers' : paginate(request, Answer.objects.get_hot_for_answer(id)),
+        'tags' : paginate(request, Tag.objects.hottest()),
+        'users' : paginate(request, User.objects.by_rating()),
+        'page_objects' : paginate(request, Answer.objects.get_hot_for_answer(id)),
+    })
 
 
 @login_required(login_url='/login/')
@@ -102,13 +102,14 @@ def new_answer(request, question_id):
         if request.method == 'POST':
             form = AnswerForm(request.POST)
             if form.is_valid():
-                answeredQuestion = Question.objects.get_by_id(question_id)[0]
+                #answeredQuestion = Question.objects.get_by_id(question_id)[0]
+                answeredQuestion = get_object_or_404(Question, pk=question_id)
                 answer = Answer.objects.create(author=request.user,
                                 create_date=timezone.now(),
                                 text=form.cleaned_data['text'],
                                 question_id=answeredQuestion.id)
                 answer.save()
-                return redirect('/question/{}'.format(question_id))
+                return redirect('/question/{}/add_answer/'.format(question_id))
         else:
             form = AnswerForm()
         #return render(request, 'question/new_answer.html', {'form': form})
@@ -139,7 +140,8 @@ def ask(request):
                 tag = Tag.objects.get_or_create(title=tagTitle)[0]
                 ques.tags.add(tag)
                 ques.save()
-            return question(request, ques.id)
+            #return question(request, ques.id)
+            return redirect('/question/{}/'.format(ques.id))
     else:
         form = AskForm()
     return render(request, 'question/ask.html', {
@@ -162,6 +164,7 @@ def signin(request):
     else:
         form = UserLoginForm()
         logout(request)
+    #return redirect(request.GET.get('next') )
     return render(request, 'question/login.html', {
             'form': form,
             'tags' : paginate(request, Tag.objects.hottest()),

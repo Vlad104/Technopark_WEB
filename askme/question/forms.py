@@ -5,9 +5,9 @@ from django.contrib.auth import authenticate
 from question.models import Question, Tag, User, Answer, Like
 
 text_validator = RegexValidator(r"[а-яА-Яa-zA-Z]", "Текст должен содержать буквы")
-tags_validator = RegexValidator(r"[а-яА-Яa-zA-Z]", "Tags should contain letters")
+tags_validator = RegexValidator(r"[а-яА-Яa-zA-Z]", "Тэги состоят из букв")
 password_validator = RegexValidator(r"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$",
-                                   "Password should contain minimum 8 characters, at least 1 letter and 1 number")
+                                   "Пароль - 8 символов. Буквы и цифры")
 
 class UserRegistrationForm(forms.ModelForm):
     first_name = forms.CharField(validators=[text_validator], widget=forms.TextInput(attrs={

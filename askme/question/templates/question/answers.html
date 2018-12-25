@@ -5,14 +5,20 @@
         <div class="media-left mr-4">
             <table >
                 <tr>
+                    <td align="center">
                     {% if user.id == question.author.id %}
                         <button class="my_btn1 js-approve-answer" data-answer_id="{{ answer.id }}"></button>                        
                         {% csrf_token %}  
-                    {% endif %}                      
+                    {% endif %}  
+                    </td>
+                </tr>     
+                <tr>                      
+                    <td align="center">   
                     {% if answer.approved %}
-                        <button class="my_btn1"></button>                        
+                        <a>Одобрен</a>                        
                         {% csrf_token %}
-                    {% endif %}
+                    {% endif %} 
+                    </td>
                 </tr>
                 <tr>
                     <td align="center">
