@@ -125,5 +125,5 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'), 
 ]  
 AUTH_USER_MODEL = 'question.User'
-MEDIA_URL = '/'
-MEDIA_ROOT = os.path.join(BASE_DIR, '')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
